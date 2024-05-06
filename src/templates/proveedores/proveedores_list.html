@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<br>
+<h1>PROVEEDORES</h1>
+{% if proveedores_list %} {% for proveedor in proveedores_list %}
+<div class="card proveedoresCard">
+  <div class="card-body">
+    <div>
+      <h5 class="card-title">{{proveedor.nombre}} {{proveedor.apellido}}</h5>
+      <p class="card-text">{{proveedor.dni}}</p>
+    </div>
+
+    <a
+      href="{% url 'proveedores:proveedor_productos' proveedor.pk %}"
+      class="btn btn-primary"
+      >Ver productos</a>
+  </div>
+</div>
+<br>
+{% endfor %} {% else %}
+<p>Aun no hay cargados proveedores</p>
+
+{% endif %} {% endblock content %}

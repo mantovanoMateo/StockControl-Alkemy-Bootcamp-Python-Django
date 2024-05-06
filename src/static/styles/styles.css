@@ -1,0 +1,60 @@
+body{
+    background-color: rgb(44, 46, 48);
+}
+
+h1{
+    text-align: center;
+    color: white;
+    font-weight: 700;
+}
+
+
+.productList{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    row-gap: 10px;
+}
+
+
+.card{
+    transition: ease-in-out .5s;
+    color: white;
+    background-color: rgb(67, 67, 67);
+}
+
+.card:hover{
+    box-shadow: 2px 2px 8px black;
+}
+
+.productDetailBtnt{
+    margin: auto;
+    text-align: center;
+    width: 100%;
+
+    color: white;
+
+    border-radius: 0px 0px 5px 5px;
+}
+
+
+.productDetailBtnt:hover{
+    box-shadow: 2px 2px 8px black;
+    color: white;
+}
+
+.productTitle{
+    text-align: center;
+    color: white;
+}
+
+.productDetail{
+    color: white;
+    background-color: rgb(67, 67, 67);
+}
+
+p{
+    color: white;
+}
+
+

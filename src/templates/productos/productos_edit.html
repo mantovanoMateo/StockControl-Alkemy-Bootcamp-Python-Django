@@ -1,0 +1,32 @@
+{% extends "base.html" %} {% block content %}
+<div class="container">
+    <br>
+    <h1>Crear Nuevo Producto</h1>
+    <br>
+  <form class="card" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+      <div>{{form.nombre}}</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Precio</label>
+      <div>{{form.precio}}</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Stock</label>
+      <div>{{form.stock_actual}}</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Proveedor</label>
+      <div>{{form.proveedor}}</div>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-success">Guardar</button>
+  </form>
+
+  {% if form.errors %} {% for field in form %} {% for error in field.errors %}
+  <p>{{ error }}</p>
+  {% endfor %} {% endfor %} {% endif %}
+</div>
+{% endblock content %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %} {% block content %}
+<br>
+<h1>PRODUCTOS</h1>
+<br>
+{% if productos_list %}
+  <div class="productList">
+  {% for producto in productos_list %}
+    <div class="card" style="width: 18rem;">
+      {% comment %} <img src="..." class="card-img-top" alt="..."> {% endcomment %}
+      <div class="card-body">
+        <h5 class="card-title">{{producto.nombre}}</h5>
+        <p class="productoPrice">${{producto.precio}}</p>
+        <p>{{producto.stock_actual}}</p>
+        <p>{{producto.proveedor}}</p>
+      </div>
+      <a class="btn btn-success " href="{% url 'productos:producto_comprar' producto.pk%}">Comprar</a>
+      <a class="btn btn-danger productDetailBtnt" href="{% url 'productos:producto_vender' producto.pk%}">Vender</a> 
+    </div>
+    {% comment %} <a href="{% url 'productos:producto_comprar' producto.pk%}">Comprar</a>
+    <a href="{% url 'productos:producto_vender' producto.pk%}">Vender</a> {% endcomment %}
+    <br>
+  {% endfor %}
+</div>
+
+{% else %}
+<p>Aun no hay cargados productos</p>
+
+{% endif %} {% endblock content %}
