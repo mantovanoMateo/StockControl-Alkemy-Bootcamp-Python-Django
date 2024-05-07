@@ -36,3 +36,10 @@ def vender(request,id):
     producto.stock_actual = producto.stock_actual-1
     producto.save()
     return redirect('productos:productos_list')
+
+def productos_buscar(request):
+    if request.method == 'POST':
+        a_buscar = request.POST.get('buscar')
+        resultado = Producto.objects.filter(nombre__contains=a_buscar)
+        print(resultado)
+        return render(request,'productos/productos_list.html',{'productos_list': resultado})

@@ -15,7 +15,7 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="{% static "styles/styles.css" %}"
+      href="{% static 'styles/styles.css' %}"
     />
   </head>
 
@@ -94,6 +94,11 @@
             </li>
           </ul>
         </div>
+        <form class="d-flex" role="search" method="post" action="{% url 'productos:buscar' %}">
+          {% csrf_token %}
+          <input class="form-control me-2" type="search" placeholder="Buscar un producto" aria-label="Search" name="buscar">
+          <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
       </div>
     </nav>
     <div class="container appBody">

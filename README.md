@@ -18,7 +18,6 @@ De esta manera quedando las siguientes apps:
 
 * Proveedores
 * Productos 
-* Inicio
 
 
 
